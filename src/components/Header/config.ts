@@ -1,18 +1,18 @@
 export const menuItems = [
     {
-        text: 'menuItem1',
-        link: '/menuItem1'
+        text: 'О проекте',
+        link: '/about'
     },
     {
-        text: 'menuItem2',
-        link: '/menuItem2'
+        text: 'Токеномика и NFT',
+        link: '/tokenomika-nft'
     },
     {
-        text: 'menuItem3',
-        link: '/menuItem3'
+        text: 'Roadmap',
+        link: '/roadmap'
     },
     {
-        text: 'menuItem4',
-        link: '/menuItem4'
+        text: 'Документы',
+        link: '/documents'
     }
 ];

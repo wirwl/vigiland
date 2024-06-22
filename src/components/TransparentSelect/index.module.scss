@@ -1,0 +1,38 @@
+.root {
+    background: transparent;
+
+    :global .vigiland__control {
+        background: transparent;
+        border: none;
+        color: #fff;
+    }
+
+    :global .vigiland__single-value {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000433;
+    }
+
+    :global .vigiland__indicator-separator {
+        display: none;
+    }
+
+    :global .vigiland__indicator {
+        svg {
+            fill: #000433;
+        }
+    }
+
+    :global .vigiland__menu {
+        background: transparent;
+    }
+
+    :global .vigiland__option {
+        background: transparent;
+        color: #000433;
+
+    }
+}

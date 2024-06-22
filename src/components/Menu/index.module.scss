@@ -1,3 +1,31 @@
 .list {
     display: flex;
 }
+
+.item {
+    padding: 10px 0;
+    
+    &:not(:last-child) {
+        margin-right: 32px;
+    }
+
+    &:hover {
+        padding-bottom: 8px;
+        border-bottom: 2px solid #00FFD0;
+    }
+}
+
+.anchor {        
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    white-space: nowrap;
+
+    &::hover {
+        color: #fff;
+    }
+}
+

@@ -1,3 +1,53 @@
 .root {
-    
+    padding: 24px 165px 0;
+    background: url('./background.jpg') no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.content {
+    padding: 177px 0 0 0;
+}
+
+.subTitle {
+    font-family: 'Manrope';
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-feature-settings: 'liga' off;
+    color: #EEEFF4;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-family: 'Manrope';
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 64px;
+    color: #fff;
+    max-width: 570px;
+    margin-bottom: 16px;
+}
+
+.description {
+    font-family: 'Manrope';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #FFFFFF;
+    max-width: 480px;
+    margin-bottom: 32px;
+}
+
+.actions {
+    display: flex;
+    gap: 32px;
+}
+
+.howItWork {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }

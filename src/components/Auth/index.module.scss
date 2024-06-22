@@ -1,3 +1,51 @@
 .root {
-    background: red;
+    display: flex;
+    align-items: center;
+}
+
+.wrapperAction {
+    position: relative;
+    z-index: 100;
+    margin-right: 24px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 13px;
+        background: #00FFD0;
+        z-index: -50;
+    }
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    padding: 8px 24px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    border-radius: 8px;
+}
+
+
+.avatar {
+    margin-right: 8px;
+}
+
+.enter {
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid #000;
+}
+
+.registration {}
+
+.vline2 {
+    height: 24px;
+    width: 1px;  
+    margin-right: 24px;  
+    border-left: 1px solid #000;
 }
