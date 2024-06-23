@@ -24,28 +24,127 @@
 .action {
     display: flex;
     align-items: center;
-    padding: 8px 24px;
+    padding: 8px r(16, 24);
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(16px);
     border-radius: 8px;
 }
 
+.openp {
+    margin-right: 8px;
+    white-space: nowrap;
+}
 
 .avatar {
     margin-right: 8px;
 }
 
-.enter {
+.enter,
+.registration {
+    background:none;
+    border: none;
+    border-radius: 0;
+    padding:0;
+}
+
+.enter {    
     padding-right: 10px;
     margin-right: 10px;
     border-right: 1px solid #000;
+    
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
-.registration {}
+.registration {
+    &:hover {
+        text-decoration: underline;
+    }
+}
 
 .vline2 {
     height: 24px;
-    width: 1px;  
-    margin-right: 24px;  
+    width: 1px;
+    margin-right: 24px;
     border-left: 1px solid #000;
+}
+
+
+
+@media (max-width: 600px) {
+    div.lang {
+        min-width: auto;
+    }
+
+    div.lang :global {
+        .vigiland__option,
+        .vigiland__single-value {
+            color: #fff;
+        }
+    
+        .vigiland__control {
+            max-width: 52px;
+        }
+               
+        .vigiland__indicator {
+            padding-left: 0px;
+        }    
+    
+        .vigiland__indicator svg {
+            fill: #fff;
+        }
+    
+         .vigiland__value-container {
+            padding-inline: 0;
+        }
+    
+        .vigiland__input-container {
+            margin-inline: 0;
+        }
+    }
+
+    .root {
+        flex-direction: column-reverse;
+        flex-grow: 1;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .vline2 {
+        display: none;
+    }
+
+    .wrapperAction {
+        margin-right: 0;
+    }
+
+    .wrapperAction,
+    .action {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .action {
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(16px);
+        color: #fff;
+    }
+
+    .enter {
+        border-right: none;    
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .wrapperAction::after {
+        content: none;
+    }
+
+    .action svg path {
+        stroke: #fff;
+    }
+    
 }

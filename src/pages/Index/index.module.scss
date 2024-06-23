@@ -1,12 +1,14 @@
 .root {
-    padding: 24px 165px 0;
+    padding: 24px 24px 0;
     background: url('./background.jpg') no-repeat;
     background-size: cover;
     min-height: 100vh;
 }
 
 .content {
-    padding: 177px 0 0 0;
+    padding: r(56,177) 0 0 0;
+    max-width: 1110px;
+    margin: 0 auto;
 }
 
 .subTitle {
@@ -17,22 +19,22 @@
     text-transform: uppercase;
     font-feature-settings: 'liga' off;
     color: #EEEFF4;
-    margin-bottom: 16px;
+    margin-bottom: r(12,16);
 }
 
 .title {
     font-weight: 800;
-    font-size: 48px;
-    line-height: 64px;
+    font-size: r(28,48);
+    line-height: r(40,64);
     color: #fff;
     max-width: 570px;
-    margin-bottom: 16px;
+    margin-bottom: r(12,16);
 }
 
 .description {
     font-weight: 400;
-    font-size: 18px;
-    line-height: 32px;
+    font-size: r(14,18);
+    line-height: r(24,32);
     color: #FFFFFF;
     max-width: 480px;
     margin-bottom: 32px;
@@ -44,7 +46,40 @@
 }
 
 .howItWork {
+    border: none;
+    background: none;
     display: flex;
     align-items: center;
     gap: 12px;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .root {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: url('./background-m.jpg') no-repeat;
+        background-size: cover;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .actions {
+        flex-direction: column;
+        margin-top: auto;
+        margin-bottom: 72px;
+    }
+
+    .howItWork {
+        margin: auto;
+    }
+
+    .content {
+        padding: 56px 0 0 0;
+    }
 }

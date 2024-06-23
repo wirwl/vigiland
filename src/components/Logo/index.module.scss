@@ -14,3 +14,21 @@
     line-height: 20px;
     color: #FFFFFF;
 }
+
+@media (max-width: 700px) {
+    .text {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .root {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .text {
+        display: block;
+    }
+}

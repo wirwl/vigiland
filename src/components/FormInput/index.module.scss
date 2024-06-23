@@ -1,0 +1,19 @@
+.root {
+    position: relative;
+    border: 1px solid #D9DBE1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.input {
+    padding: 16px;
+    width: 100%;
+    border: none
+}
+
+.cssIcon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}

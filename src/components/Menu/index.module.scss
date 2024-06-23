@@ -1,3 +1,21 @@
+.root {
+    align-self: center;
+}
+
+.hamburger {
+    display: none;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: r(0,144);
+
+    @media (max-width:1045px) {
+        gap: 20px;
+    }
+}
+
 .list {
     display: flex;
 }
@@ -6,7 +24,7 @@
     padding: 10px 0;
     
     &:not(:last-child) {
-        margin-right: 32px;
+        margin-right: r(16,32);
     }
 
     &:hover {
@@ -28,3 +46,62 @@
     }
 }
 
+.open {
+    transform: translateX(100%);
+    transition: transform .3s;
+}
+
+.closeButton {
+    display: none;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+}
+
+@media (max-width: 940px) {
+    .root {
+        flex-grow: 0.9;
+    }
+
+    .list {
+        flex-direction: column;
+    }
+
+    .item:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .root {
+        margin-right: auto;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .wrapper {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        left: -100%;
+        top: 0;
+        
+        z-index: 1000;
+        flex-direction: column;
+        padding: 42px 56px 42px;
+
+        background: rgba(0, 4, 51, 0.6);
+        backdrop-filter: blur(8px);
+    }
+
+    .list {
+        align-items: flex-start;
+    }
+
+    .closeButton {
+        display: block;
+    }
+}

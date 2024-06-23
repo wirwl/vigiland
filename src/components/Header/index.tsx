@@ -1,4 +1,3 @@
-import { Auth } from "../Auth";
 import { Logo } from "../Logo";
 import { Menu } from "../Menu";
 import { menuItems } from "./config";
@@ -11,6 +10,5 @@ export function Header() {
         <div className={root}>
             <Logo/>
             <Menu items = {menuItems}/>
-            <Auth isAuth={false}/>
         </div>)
 }

@@ -7,4 +7,16 @@
     text-align: center;
     color: #000433;
     border-radius: 8px;
+
+    &:hover:not(:disabled) {
+        background: #41FFDC;
+    }
+
+    &:active:not(:disabled) {
+        background: #02FBCD;
+    }
+}
+
+.fullWidth {
+    width: 100%;
 }

@@ -9,7 +9,6 @@ export default defineConfig({
   plugins: [react(), svgr()],
   css: {
     modules: {
-      
       generateScopedName(name, filename, css) {
         const classNameIndex = css.indexOf(`.${name}`);
         const lineNumber = css.substr(0, classNameIndex).split(/\r?\n/).length;        
@@ -18,6 +17,11 @@ export default defineConfig({
         const items = filename.split('/');
         return `${items[items.length-2]}__${name}_${hash}-${lineNumber}`;
       },
+    },
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "/src/lib.scss" as *;`,
+      }
     }
-  }  
+  },  
 })
