@@ -1,0 +1,69 @@
+.root {
+    background: #fff;
+    border: 1px solid #D9DBE1;
+    border-radius: 12px;
+    padding: 55px 32px 42px;
+    max-width: 424px;
+    margin-inline: 20px;
+    color: #000433;
+    position: relative;
+    width: 100%;
+}
+
+.blankAvatar {
+    position: absolute;
+    top: -27px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.caption {
+    text-align: center;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.desc {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 32px;
+}
+
+.inputs {
+    margin-bottom: 32px;
+}
+
+.inputEmail, 
+.cssPass {
+    margin-bottom: 16px;
+}
+
+.eye {
+    cursor: pointer;
+}
+
+.submit {
+    margin-bottom: 24px;
+}
+
+.texts {
+    text-align: center;
+}
+
+.text1 {
+    margin-right: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #969BAB;
+
+}
+
+.text2 {
+    color: #8C30F5;
+    background: none;
+    padding: 0;
+}

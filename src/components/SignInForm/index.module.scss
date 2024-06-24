@@ -32,6 +32,18 @@
     margin-bottom: 32px;
 }
 
+.inputs {
+    margin-bottom: 32px;
+}
+
+.inputEmail {
+    margin-bottom: 16px;
+}
+
+.eye {
+    cursor: pointer;
+}
+
 .submit {
     margin-bottom: 24px;
 }
@@ -42,9 +54,15 @@
 
 .text1 {
     margin-right: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #969BAB;
+
 }
 
 .text2 {
     color: #8C30F5;
     background: none;
+    padding: 0;
 }

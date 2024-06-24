@@ -8,7 +8,15 @@
 .input {
     padding: 16px;
     width: 100%;
-    border: none
+    border: none;
+    outline: none;
+
+    &::placeholder {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #969BAB;
+    }
 }
 
 .cssIcon {
@@ -16,4 +24,5 @@
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
 }

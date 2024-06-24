@@ -3,24 +3,54 @@ import { Button } from '../Button';
 import BlankAvatar from '../../common/img/blank-avatar.svg?react';
 import { FormInput } from '../FormInput';
 import Email from './email.svg?react';
-import Eye from './eye.svg?react';
+import EyeClose from './eye-close.svg?react';
+import EyeOpen from './eye-open.svg?react';
+import { useState } from 'react';
+import React from 'react';
 
-const { root, blankAvatar, caption, desc, submit, texts, text1, text2 } = mainStyles;
+const { root, blankAvatar, caption, desc, inputs, inputEmail, eye, submit, texts, text1, text2 } = mainStyles;
 
 type Props = {
-    onSubmit?: () => void;
+    onSubmit?: (data:any) => void;
 }
 
-export function SignInForm({ onSubmit }: Props) {
-    return <div className={root}>
-        <BlankAvatar className={blankAvatar}/>
+export const SignInForm = React.forwardRef(function SignInForm_({ onSubmit }: Props, ref: any) {
+    const [showPass, setShowPass] = useState(false);
+    const [email, setEmail] = useState('');
+    const [pass, setPass] = useState('');
+
+    const handleClickEye = () => setShowPass(pass => !pass);
+    const Eye = showPass ? EyeOpen : EyeClose;
+
+    const handleEmailChange = (e:any) => setEmail(e.target.value);
+    const handlePassChange = (e:any) => setPass(e.target.value);
+
+    const handleSubmit = (e: any) => { 
+        e.preventDefault(); 
+        onSubmit?.({
+            email, 
+            password: pass,
+            remember: true
+        }); 
+    }
+
+
+    return <form ref={ref} className={root}>
+        <BlankAvatar className={blankAvatar} />
         <h2 className={caption}>Войти в аккаунт</h2>
         <p className={desc}>Войти в личный кабинет</p>
-        <div>
-            <FormInput icon={<Email/>}/>
-            <FormInput icon={<Eye/>}/>
+        <div className={inputs}>
+            <FormInput value={email} onChange={handleEmailChange} className={inputEmail} type='email' icon={<Email />} placeholder='Введите ваш email' />
+            <FormInput
+                value = {pass}
+                onChange={handlePassChange}
+                type={showPass ? "text" : "password"}
+                icon={<Eye className={eye} onClick={handleClickEye} />}
+                placeholder='Пароль'
+            />
         </div>
-        <Button className={submit} text='Войти' fullWidth />
-        <p className={texts}><span className={text1}>Нет аккаунта?</span><button className={text2}>Зарегистрироваться?</button></p>        
-    </div>
-}
+        <Button disabled={email.length===0 || pass.length===0}  className={submit} text='Войти' fullWidth size='large' onClick={handleSubmit} />
+        <p className={texts}><span className={text1}>Нет аккаунта?</span><button type='button' className={text2}>Зарегистрироваться?</button></p>
+    </form>
+})
+

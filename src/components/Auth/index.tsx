@@ -7,6 +7,9 @@ import { createPortal } from "react-dom";
 import { ModalParent } from "../ModalParent";
 import { useState } from "react";
 import { SignInForm } from "../SignInForm";
+import { postFetch } from "../../lib";
+import { toast } from 'react-toastify'
+import { SignUpForm } from "../SignUpForm";
 
 const { root, wrapperAction, action, openp, avatar, enter, registration, vline2, lang } = mainStyles;
 
@@ -20,7 +23,7 @@ type Props = {
 }
 
 export function Auth({ isAuth }: Props) {
-    const [openSignIn, setOpenSignIn] = useState(true);
+    const [openSignIn, setOpenSignIn] = useState(false);
     const [openSignUp, setOpenSignUp] = useState(false);
 
     const isMobile = useMediaQuery('(max-width: 600px)');
@@ -28,10 +31,30 @@ export function Auth({ isAuth }: Props) {
     const handleClickEnter = () => setOpenSignIn(true);
     const handleRegistration = () => setOpenSignUp(true);
 
+    const handleSignInSubmit = (data:any) => {
+        postFetch('http://hz.axgrid.com:8094/api/v1/signin', data).then(data =>{            
+            if (data.err) {
+                toast.error(data.err);
+            } else {
+
+            }
+        })
+    }
+
+    const handleSignUpSubmit = (data:any) => {
+        postFetch('http://hz.axgrid.com:8094/api/v1/signup', data).then(data =>{            
+            if (data.err) {
+                toast.error(data.err);
+            } else {
+
+            }
+        })
+    }
+
     return (
         <div className={root}>
-            {openSignIn && createPortal(<ModalParent setOpen={setOpenSignIn}><SignInForm/></ModalParent>, document.body)}
-            {openSignUp && createPortal(<ModalParent setOpen={setOpenSignUp} />, document.body)}
+            {openSignIn && createPortal(<ModalParent setOpen={setOpenSignIn}><SignInForm onSubmit={handleSignInSubmit}/></ModalParent>, document.body)}
+            {openSignUp && createPortal(<ModalParent setOpen={setOpenSignUp}><SignUpForm onSubmit={handleSignUpSubmit}/></ModalParent>, document.body)}
             <div className={wrapperAction}>
                 <div className={action}>
                     {isAuth ? <><span className={openp}>Открыть платформу</span><Chevron /></> : (<>

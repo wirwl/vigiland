@@ -7,6 +7,7 @@
     text-align: center;
     color: #000433;
     border-radius: 8px;
+    padding: 9px;
 
     &:hover:not(:disabled) {
         background: #41FFDC;
@@ -14,6 +15,13 @@
 
     &:active:not(:disabled) {
         background: #02FBCD;
+    }
+
+    &.large {
+        padding: 20px 9px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
     }
 }
 

@@ -55,8 +55,7 @@ button {
   cursor: pointer;
 }
 
-
-button:focus,
-button:focus-visible {
-  outline: 1px auto -webkit-focus-ring-color;
+input,
+input::placeholder {
+  font-family: Manrope, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }

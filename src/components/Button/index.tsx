@@ -10,12 +10,13 @@ type Props = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButt
     text: string;
     fullWidth?: boolean;
     className?: string;
+    size?: 'medium' | 'large';
 }
 
 export function Button(props: Props) {
-    const { text, fullWidth = false, className, ...rest } = props;
+    const { text, fullWidth = false, size='medium', className, ...rest } = props;
     return (
-        <button {...rest} className={c(root, className, { fullWidth })}>
+        <button {...rest} className={c(root, className, { fullWidth, [size]:true })}>
             {text}
         </button>)
 }
