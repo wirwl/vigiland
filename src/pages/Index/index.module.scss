@@ -54,6 +54,13 @@
     color: #fff;
 }
 
+@media (min-width: 1600px) {
+    .content {
+        max-width: 90%;
+    }
+}
+
+
 @media (max-width: 600px) {
     .root {
         display: flex;
@@ -80,6 +87,6 @@
     }
 
     .content {
-        padding: 56px 0 0 0;
+        padding: 56px 0 0 0;        
     }
 }

@@ -33,6 +33,7 @@
 .openp {
     margin-right: 8px;
     white-space: nowrap;
+    color: #000433;
 }
 
 .avatar {
@@ -137,6 +138,11 @@
         border-right: none;    
         margin-right: 0;
         padding-right: 0;
+        color: #fff;
+        
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     .wrapperAction::after {
@@ -145,6 +151,10 @@
 
     .action svg path {
         stroke: #fff;
+    }
+
+    .openp {
+        color: #fff;
     }
     
 }

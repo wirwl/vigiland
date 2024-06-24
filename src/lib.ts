@@ -9,7 +9,8 @@ export function getFetch(url: string) {
 export function postFetch(url: string, body: any) {
     return fetch(url, {
         method: "POST",
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
+        
     }).then(response => {
         return response.json();
     }).catch(error => {

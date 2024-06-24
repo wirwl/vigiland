@@ -7,6 +7,7 @@ import EyeClose from './eye-close.svg?react';
 import EyeOpen from './eye-open.svg?react';
 import { useState } from 'react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const { root, blankAvatar, caption, desc, inputs, inputEmail, eye, submit, texts, text1, text2, cssPass } = mainStyles;
 
@@ -62,7 +63,7 @@ export const SignUpForm = React.forwardRef(function SignInForm_({ onSubmit }: Pr
             />
         </div>
         <Button className={submit} text='Регистрация' fullWidth size='large' onClick={handleSubmit} />
-        <p className={texts}><span className={text1}>Есть аккаунт?</span><button type='button' className={text2}>Войти в личный кабинет?</button></p>
+        <p className={texts}><span className={text1}>Есть аккаунт?</span><Link className={text2} to="/sign-in">Войти в личный кабинет?</Link></p>
     </form>
 })
 

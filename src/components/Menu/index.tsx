@@ -40,7 +40,7 @@ export function Menu({ items }: Props) {
                         <a className={anchor} href={link}>{text}</a>
                     </li>)}
                 </ul>
-                <Auth isAuth={auth} />
+                <Auth isAuth={auth} setOpenMenu={setOpen} />
             </div>
         </nav>
     )
